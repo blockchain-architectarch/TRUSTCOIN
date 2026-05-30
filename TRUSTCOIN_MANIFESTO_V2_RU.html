@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUSTCOIN — Манифест · BLOCKCHAIN ARCHITECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-dim: #7A6130;
+  --gold-pale: #E8D5A3;
+  --dark: #07070A;
+  --dark-2: #0D0D12;
+  --dark-3: #13131A;
+  --text: #E2DDD4;
+  --text-mid: #9B9589;
+  --text-dim: #565048;
+  --line: rgba(201,168,76,0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999;
+}
+body::before {
+  content: '';
+  position: fixed;
+  left: 56px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold-dim) 15%, var(--gold-dim) 85%, transparent);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.page { max-width: 760px; margin: 0 auto; padding: 0 48px 120px 112px; }
+.header { padding: 96px 0 72px; opacity: 0; animation: fadeUp 1.2s cubic-bezier(.16,1,.3,1) forwards 0.1s; }
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: 0.55em; color: var(--gold);
+  text-transform: uppercase; display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+h1 { font-family: 'EB Garamond', serif; font-size: clamp(60px, 10vw, 112px); font-weight: 500; line-height: 0.9; letter-spacing: -0.02em; }
+h1 em { font-style: italic; color: var(--gold); }
+.subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.4em; color: var(--text-dim); text-transform: uppercase; margin-top: 28px; }
+.rule { height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent 70%); margin: 56px 0; opacity: 0; animation: fade 1s ease forwards 0.4s; }
+.section { margin-bottom: 72px; opacity: 0; animation: fadeUp 1s cubic-bezier(.16,1,.3,1) forwards; }
+.s1{animation-delay:0.3s}.s2{animation-delay:0.45s}.s3{animation-delay:0.6s}
+.s4{animation-delay:0.75s}.s5{animation-delay:0.9s}.s6{animation-delay:1.05s}
+.s7{animation-delay:1.2s}.s8{animation-delay:1.35s}
+.tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.5em;
+  color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+}
+.tag::after { content: ''; width: 20px; height: 1px; background: var(--gold-dim); }
+h2 { font-family: 'EB Garamond', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 24px; }
+p { color: var(--text-mid); margin-bottom: 18px; max-width: 640px; }
+p:last-child { margin-bottom: 0; }
+strong { color: var(--text); font-weight: 500; }
+.quote { border-left: 2px solid var(--gold); padding: 18px 28px; margin: 36px 0; background: rgba(201,168,76,0.04); }
+.quote p { font-size: clamp(18px, 2.4vw, 24px) !important; font-style: italic; color: var(--gold-pale) !important; line-height: 1.5; }
+.mechanic { border: 1px solid var(--line); margin: 36px 0; overflow: hidden; }
+.mechanic-row { display: grid; grid-template-columns: 180px 1fr; border-bottom: 1px solid var(--line); transition: background 0.2s; }
+.mechanic-row:last-child { border-bottom: none; }
+.mechanic-row:hover { background: rgba(201,168,76,0.03); }
+.m-label { padding: 16px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--gold); border-right: 1px solid var(--line); display: flex; align-items: center; }
+.m-value { padding: 16px 24px; font-size: 16px; color: var(--text-mid); display: flex; align-items: center; line-height: 1.5; }
+.contracts { margin: 36px 0; display: flex; flex-direction: column; gap: 2px; }
+.contract-item { background: var(--dark-3); padding: 20px 24px; display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: center; transition: background 0.2s; }
+.contract-item:hover { background: var(--dark-2); }
+.c-name { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--gold); }
+.c-addr { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-mid); word-break: break-all; }
+.c-addr a { color: var(--gold-pale); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.c-addr a:hover { border-color: var(--gold); }
+.c-future { opacity: 0.45; font-style: italic; }
+.dist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 36px 0; }
+.dist-item { background: var(--dark-3); padding: 28px 20px; text-align: center; position: relative; overflow: hidden; transition: background 0.3s; }
+.dist-item:hover { background: var(--dark-2); }
+.dist-item::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
+.dist-item:hover::before { transform: scaleX(1); }
+.dist-pct { font-family: 'EB Garamond', serif; font-size: 48px; font-weight: 500; color: var(--gold); line-height: 1; display: block; }
+.dist-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.3em; color: var(--text-dim); text-transform: uppercase; margin-top: 8px; display: block; }
+.dist-desc { font-size: 13px; color: var(--text-dim); margin-top: 10px; line-height: 1.4; }
+.timeline { margin: 36px 0; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(to bottom, var(--gold-dim), transparent); }
+.tl-item { display: grid; grid-template-columns: 90px 1fr; gap: 24px; margin-bottom: 28px; padding-left: 20px; position: relative; }
+.tl-item::before { content: ''; position: absolute; left: -4px; top: 10px; width: 8px; height: 8px; border: 1px solid var(--gold); background: var(--dark); transform: rotate(45deg); }
+.tl-year { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--gold); padding-top: 2px; }
+.tl-text { font-size: 16px; color: var(--text-mid); line-height: 1.6; }
+.tl-text strong { color: var(--text); }
+.warning { border: 1px solid rgba(122,32,32,0.5); background: rgba(122,32,32,0.06); padding: 28px 32px; margin: 36px 0; }
+.warning .w-head { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.4em; color: #A03030; text-transform: uppercase; margin-bottom: 14px; }
+.warning p { font-size: 16px !important; color: var(--text-mid) !important; }
+.links { display: flex; flex-direction: column; gap: 2px; margin: 28px 0; }
+.link-row { display: grid; grid-template-columns: 100px 1fr; border-bottom: 1px solid var(--line); padding: 14px 0; }
+.link-type { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.3em; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; }
+.link-val { font-size: 15px; color: var(--text-mid); }
+.link-val a { color: var(--gold-pale); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.link-val a:hover { border-color: var(--gold); }
+.footer { border-top: 1px solid var(--line); padding-top: 48px; margin-top: 80px; opacity: 0; animation: fade 1s ease forwards 1.6s; }
+.footer-stamp { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.4em; color: var(--text-dim); text-transform: uppercase; line-height: 2; }
+.final-line { margin-top: 32px; font-family: 'EB Garamond', serif; font-size: 22px; font-style: italic; color: var(--text-dim); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 680px) {
+  body::before { display: none; }
+  .page { padding: 0 24px 80px 24px; }
+  .header { padding: 64px 0 48px; }
+  .dist { grid-template-columns: 1fr; }
+  .mechanic-row { grid-template-columns: 1fr; }
+  .m-label { border-right: none; border-bottom: 1px solid var(--line); }
+  .contract-item { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="eyebrow">BLOCKCHAIN ARCHITECT · ETHEREUM MAINNET · 2026</div>
+    <h1>TRUST<em>COIN</em></h1>
+    <div class="subtitle">Манифест · Версия 6.2 · 25 мая 2026</div>
+  </header>
+
+  <div class="rule"></div>
+
+  <!-- 01 ДЕКЛАРАЦИЯ -->
+  <section class="section s1">
+    <div class="tag">01 — Декларация</div>
+    <h2>Мы не продаём мечту.<br>Мы публикуем код.</h2>
+    <div class="quote">
+      <p>TRUSTCOIN — это не инвестиция. Это решение.<br>
+      Ты либо понимаешь что здесь происходит — либо нет.</p>
+    </div>
+    <p>Большинство проектов обещают. Мы деплоим. Три смарт-контракта на Ethereum Mainnet, верифицированы на Etherscan, открыты каждому разработчику на земле. Никаких вайтлистов. Никаких исключений. Математика публична. Закон — это код.</p>
+    <p>Не доверяй этому манифесту. Читай контракты. Если между словами и кодом есть противоречие — <strong>верь коду.</strong></p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 02 ЧТО МЫ СТРОИМ -->
+  <section class="section s2">
+    <div class="tag">02 — Что мы строим</div>
+    <h2>Четыре контракта.<br>Шесть лет. Навсегда.</h2>
+    <p><strong>200,000,000 токенов TRUST.</strong> Все выпущены при деплое, заперты внутри контракта. Нет приватного распределения. Нет командного резерва. Нет скрытых разблокировок.</p>
+    <p>Экосистема состоит из четырёх контрактов. Три уже работают в сети. Четвёртый запечатается в последний день шестого года — и будет платить вечно.</p>
+    <div class="contracts">
+      <div class="contract-item">
+        <div class="c-name">TRUSTCOIN<br>V6.2</div>
+        <div class="c-addr"><a href="https://etherscan.io/address/0x454d106409890a9f336b5710d638d825a743a8a2" target="_blank">0x454d106409890a9f336b5710d638d825a743a8a2</a><br><span style="font-size:11px;color:var(--text-dim)">Токен · ERC-20 · 200,000,000 TRUST</span></div>
+      </div>
+      <div class="contract-item">
+        <div class="c-name">EMISSION<br>BRIDGE V6.1</div>
+        <div class="c-addr"><a href="https://etherscan.io/address/0xa2e18bc91279922ad7536a487b47d74b4f108e3e" target="_blank">0xa2e18bc91279922ad7536a487b47d74b4f108e3e</a><br><span style="font-size:11px;color:var(--text-dim)">Эмиссия · 1,388,889 TRUST в месяц (50% от ежемесячного выпуска)</span></div>
+      </div>
+      <div class="contract-item">
+        <div class="c-name">TAXBRIDGE<br>V6.3</div>
+        <div class="c-addr"><a href="https://etherscan.io/address/0x59ab99534d5b830b4db04f17f5bf546556dc6233" target="_blank">0x59ab99534d5b830b4db04f17f5bf546556dc6233</a><br><span style="font-size:11px;color:var(--text-dim)">Налог · 0.25% с каждой транзакции</span></div>
+      </div>
+      <div class="contract-item c-future">
+        <div class="c-name">LOYALTY<br>VAULT</div>
+        <div class="c-addr"><span style="font-size:11px;color:var(--text-dim)">Деплой: месяц 72 · июнь 2032<br>Cumulative Immutable Loyalty Vault — откроется и будет платить вечно</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 03 МЕХАНИКА ЭМИССИИ -->
+  <section class="section s3">
+    <div class="tag">03 — Механика эмиссии</div>
+    <h2>Каждые 30 дней.<br>Половина сгорает. Навсегда.</h2>
+    <div class="mechanic">
+      <div class="mechanic-row">
+        <div class="m-label">Эмиссия</div>
+        <div class="m-value">200,000,000 TRUST · фиксировано навсегда</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Цель сжигания</div>
+        <div class="m-value">100,000,000 · стоп прописан в коде, необратим</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Цикл</div>
+        <div class="m-value">72 месяца · июнь 2026 → июнь 2032</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Ежемесячно</div>
+        <div class="m-value">2,777,778 выпущено · 1,388,889 сожжено · 1,388,889 на рынок</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Сеть</div>
+        <div class="m-value">Ethereum L1 · Без мостов · Без зависимостей L2</div>
+      </div>
+    </div>
+    <p>При достижении цели сжигания — механизм останавливается навсегда. Никто не может его перезапустить. Ни деплоер. Ни DAO. Ни решение суда. Этой функции в контракте не существует.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 04 НАЛОГ -->
+  <section class="section s4">
+    <div class="tag">04 — Налог и Panic Tax</div>
+    <h2>0.5% с каждой транзакции.<br>Паника стоит дороже.</h2>
+    <p>Базовый налог <strong>0.5%</strong> делится поровну: <strong>0.25% идёт напрямую в Фонд</strong>, <strong>0.25% накапливается в TaxBridge</strong> — заморожен до месяца 73, потом распределяется каждые 90 дней. Транзакционного сжигания нет.</p>
+    <p>Если оракул фиксирует падение цены — включается <strong>Panic Tax</strong>. Дополнительный налог поверх базовых 0.5%:</p>
+    <div class="mechanic">
+      <div class="mechanic-row">
+        <div class="m-label">Падение &lt;10%</div>
+        <div class="m-value">+0% · только базовые 0.5%</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Падение 10%</div>
+        <div class="m-value">+1% · итого 1.5%</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Падение 20%</div>
+        <div class="m-value">+2% · итого 2.5%</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Падение 30%</div>
+        <div class="m-value">+3% · итого 3.5%</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Падение 40%</div>
+        <div class="m-value">+4% · итого 4.5%</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Падение ≥50%</div>
+        <div class="m-value">+5% максимум · итого 5.5% · потолок навсегда</div>
+      </div>
+    </div>
+    <p>Panic Tax делится: 50% → Фонд · 50% → TaxBridge. Паника работает против паникующих — и в пользу тех кто держит.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 05 G-КОЭФФИЦИЕНТ -->
+  <section class="section s5">
+    <div class="tag">05 — Коэффициент G</div>
+    <h2>Время — единственный актив,<br>который нельзя купить.</h2>
+    <p>Каждый холдер получает множитель на основе даты входа. Месяц 1 — это ×10.00. Месяц 72 — это ×0.20. Кривая линейная, шаг −0.138 в месяц — никаких манипуляций, никакого усмотрения.</p>
+    <div class="mechanic">
+      <div class="mechanic-row">
+        <div class="m-label">Месяц 1</div>
+        <div class="m-value">G = ×10.00 · 1,000 TRUST весят 10,000 единиц</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Год 2</div>
+        <div class="m-value">G = ×7.24 · опоздать — всё ещё осмысленно</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Год 4</div>
+        <div class="m-value">G = ×4.34 · середина честна</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Месяц 72</div>
+        <div class="m-value">G = ×0.20 · последний вход, минимальный вес</div>
+      </div>
+    </div>
+    <p>Коэффициент G криптографически привязан к адресу кошелька. Его нельзя продать. Его нельзя передать. Любая исходящая транзакция сбрасывает G в ноль — навсегда, без восстановления. <strong>Это первая метрика лояльности в истории, которую невозможно подделать.</strong></p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 06 LOYALTY VAULT -->
+  <section class="section s6">
+    <div class="tag">06 — Cumulative Immutable Loyalty Vault</div>
+    <h2>Один снапшот. Месяц 72.<br>Хранилище открывается навсегда.</h2>
+    <p>В последний день шестого года в сеть деплоится четвёртый контракт — <strong>Cumulative Immutable Loyalty Vault</strong>. В этот момент делается один снапшот всех холдеров. Этот момент неизменяем навсегда.</p>
+    <p>TaxBridge разблокируется. С месяца 73 — каждые 90 дней автоматически распределяется накопленный пул:</p>
+    <div class="dist">
+      <div class="dist-item">
+        <span class="dist-pct">70%</span>
+        <span class="dist-label">Холдеры</span>
+        <div class="dist-desc">Взвешено по балансу × коэффициент G. Минимум 1,000 TRUST.</div>
+      </div>
+      <div class="dist-item">
+        <span class="dist-pct">20%</span>
+        <span class="dist-label">Гвардия</span>
+        <div class="dist-desc">Технические хранители сети.</div>
+      </div>
+      <div class="dist-item">
+        <span class="dist-pct">10%</span>
+        <span class="dist-label">Благотворит.</span>
+        <div class="dist-desc">Фиксировано навсегда. Без голосования.</div>
+      </div>
+    </div>
+    <p>Vault хранит накопленную долю каждого холдера через единый Merkle Root. Формула: <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">claimable = (totalReceived × shares[address] / totalShares) − claimed[address]</code></p>
+    <p>Не пришёл за выплатой 10 лет? Всё накопилось и ждёт. Нет срока давности. Нет функции sweep. <strong>Математика не забывает.</strong></p>
+    <p>После <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">renounceOwnership()</code> — в системе никого нет. Ни деплоера. Ни Архитектора. Только математика.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 07 ХРОНОЛОГИЯ -->
+  <section class="section s7">
+    <div class="tag">07 — Хронология</div>
+    <h2>Шесть лет дефляции.<br>Потом: навсегда.</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">МАЙ 2026</div>
+        <div class="tl-text"><strong>Деплой.</strong> TrustcoinV6.2, EmissionBridgeV6.1, TaxBridgeV6.3 задеплоены 25 мая 2026. Верифицированы на Etherscan. Неизменяемы.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">ИЮНЬ 2026</div>
+        <div class="tl-text"><strong>Первый monthlyRelease.</strong> 2,777,778 TRUST выходит. 1,388,889 сгорает навсегда. Архивариус фиксирует первую запись. Первые холдеры входят.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026–2032</div>
+        <div class="tl-text"><strong>72 месяца дефляции.</strong> Каждый месяц — выпуск и сжигание. G-коэффициент тикает. TaxBridge накапливает. Фонд строит ценовую плиту.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">ИЮНЬ 2032</div>
+        <div class="tl-text"><strong>Месяц 72. Снапшот.</strong> Один момент — навсегда. Loyalty Vault деплоится. Позиция каждого холдера зафиксирована. TaxBridge разблокируется.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">∞</div>
+        <div class="tl-text"><strong>Вечный двигатель.</strong> Каждые 90 дней — распределение. Нет даты окончания. Нет владельца. Пока работает Ethereum — Vault платит.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 08 ПРАВИЛА -->
+  <section class="section s8">
+    <div class="tag">08 — Правила</div>
+    <h2>Не рекомендации.<br>Контракт их исполняет.</h2>
+    <div class="mechanic">
+      <div class="mechanic-row">
+        <div class="m-label">Минимум</div>
+        <div class="m-value">1,000 TRUST на кошельке. 999 и ниже = нулевая доля. Без исключений.</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Лимит год 1</div>
+        <div class="m-value">10,000 TRUST максимум на кошелёк. Вшито в контракт. Нельзя обойти.</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Сброс G</div>
+        <div class="m-value">Любая исходящая транзакция = G сбрасывается в ноль. Навсегда. Без восстановления.</div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Железо</div>
+        <div class="m-value">
+          Только холодный кошелёк. G-коэффициент привязан к адресу — защити его железом.<br><br>
+          <strong style="color:var(--text)">✅ Рекомендуем:</strong><br>
+          Trezor Safe 3 — наш стандарт, открытый код, железобетонно<br>
+          Trezor Safe 5 / Safe 7 — та же защита, лучше экран<br>
+          Keystone 3 Pro — без проводов, только QR, максимальная изоляция<br>
+          OneKey Pro — 4 чипа защиты, отпечаток пальца<br>
+          BitBox02 — выглядит как флешка, швейцарское качество<br><br>
+          <strong style="color:#A03030">⚠️ На свой страх и риск:</strong><br>
+          Tangem — нет экрана, подписываешь вслепую. Не для долгого холдинга.<br>
+          Ledger — закрытый код, был скандал. Используй осознанно.<br><br>
+          <span style="color:var(--text-dim);font-size:14px">После первого года — твой выбор. Мы платим на тот кошелёк, на котором лежат токены. Всегда.</span>
+        </div>
+      </div>
+      <div class="mechanic-row">
+        <div class="m-label">Плита цены</div>
+        <div class="m-value">$0.05 — стена $5,000,000 на Uniswap V3. Только растёт. Никогда не уменьшается.</div>
+      </div>
+    </div>
+    <div class="warning">
+      <div class="w-head">⚠ Прочитай код</div>
+      <p>Это не просьба. Если ты разработчик — открой контракты на Etherscan и прочитай каждую строку прежде чем принять решение. Если ты не разработчик — найди того кто является. Мы не несём ответственности за решения принятые без понимания механики.</p>
+    </div>
+
+    <div class="links">
+      <div class="link-row">
+        <div class="link-type">Telegram</div>
+        <div class="link-val"><a href="https://t.me/+qCYfDVPw1n4zZDQ8">t.me/+qCYfDVPw1n4zZDQ8</a></div>
+      </div>
+      <div class="link-row">
+        <div class="link-type">Signal</div>
+        <div class="link-val"><a href="https://signal.group/#CjQKIJU5recEYPCJrDaz-j6WBQg9btDjRjtJ3CTne-ykmYCsEhB3DpLXgtfm2DcjcswoG6Fc">Blockchain-Architect · Pioneers</a></div>
+      </div>
+      <div class="link-row">
+        <div class="link-type">Twitter</div>
+        <div class="link-val"><a href="https://x.com/esv_blockchain">x.com/esv_blockchain</a></div>
+      </div>
+      <div class="link-row">
+        <div class="link-type">TRUST</div>
+        <div class="link-val"><a href="https://etherscan.io/address/0x454d106409890a9f336b5710d638d825a743a8a2">0x454d106409890a9f336b5710d638d825a743a8a2</a></div>
+      </div>
+      <div class="link-row">
+        <div class="link-type">Emission</div>
+        <div class="link-val"><a href="https://etherscan.io/address/0xa2e18bc91279922ad7536a487b47d74b4f108e3e">0xa2e18bc91279922ad7536a487b47d74b4f108e3e</a></div>
+      </div>
+      <div class="link-row">
+        <div class="link-type">TaxBridge</div>
+        <div class="link-val"><a href="https://etherscan.io/address/0x59ab99534d5b830b4db04f17f5bf546556dc6233">0x59ab99534d5b830b4db04f17f5bf546556dc6233</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-stamp">
+      BLOCKCHAIN ARCHITECT · TRUSTCOIN V6.2 · ETHEREUM MAINNET · 25.05.2026<br>
+      CUMULATIVE IMMUTABLE LOYALTY VAULT · ИЮНЬ 2032<br>
+      ТРИ КОНТРАКТА АКТИВНЫ · ЧЕТВЁРТЫЙ ДЕПЛОИТСЯ В МЕСЯЦ 72
+    </div>
+    <div class="final-line">«Здесь строят — не продают. Математика, не обещания.»</div>
+    <div style="margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.3em;color:var(--text-dim);text-transform:uppercase;">Создано Blockchain-Architect в партнёрстве с Коллективным ИИ</div>
+  </footer>
+
+</div>
+</body>
+</html>
