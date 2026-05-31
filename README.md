@@ -8,7 +8,7 @@ Built by Blockchain-Architect in partnership with Collective AI
 What is TRUSTCOIN?
 TRUSTCOIN is a deflationary ERC-20 token on Ethereum L1 with an autonomous loyalty engine. 200,000,000 tokens. 72 months of emission. Half of every monthly release burns forever. The rest enters the market.
 
-On month 72 — one snapshot is taken. The Cumulative Immutable Loyalty Vault opens on June 1, 2032 and distributes every 90 days. Forever. Without an owner.
+On month 72 — one snapshot is taken. The Cumulative Immutable Loyalty Vault opens on July 1, 2032 and distributes every 90 days. Forever. Without an owner.
 
 Do not trust this README. Read the contracts.
 
@@ -27,7 +27,7 @@ TaxBridgeV6.3
 0x59ab99534d5b830b4db04f17f5bf546556dc6233
 View
 Cumulative Immutable Loyalty Vault
-Deploys June 2032
+Deploys July 2032
 —
 
 
@@ -46,7 +46,7 @@ Burned per Release
 To Market per Release
 1,388,889 TRUST (50%)
 Cycle
-72 months · June 2026 → June 2032
+72 months · July 2026 → July 2032
 Network
 Ethereum L1 · No bridges · No L2
 
@@ -137,7 +137,7 @@ $0.05 wall · $5,000,000 on Uniswap V3
 Timeline
 May 2026    → Deploy. Three contracts live on Mainnet.
 
-June 2026   → First monthlyRelease. Emission begins. G-coefficient starts ticking.
+July 2026   → First monthlyRelease. Emission begins. G-coefficient starts ticking.
 
 2026–2032   → 72 months. Monthly burn. TaxBridge accumulates.
 
@@ -145,7 +145,7 @@ June 2026   → First monthlyRelease. Emission begins. G-coefficient starts tick
 
 Month 72    → Snapshot. Cumulative Immutable Loyalty Vault deploys. TaxBridge unlocks.
 
-June 2032   → Vault opens.
+July 2032   → Vault opens.
 
 ∞           → No end date. No owner. Ethereum runs — Vault pays.
 
@@ -163,8 +163,8 @@ TRUSTCOIN_MANIFESTO_V2_EN.html
 Full manifesto in English
 TRUSTCOIN_MANIFESTO_V2_RU.html
 Full manifesto in Russian
-TRUSTCOIN_CALENDAR_2PAGE.pdf
-Emission calendar + G-coefficient poster (print-ready A4)
+TRUSTCOIN_EMISSION_CALENDAR.md   Emission release schedule — all 72 dates
+TRUSTCOIN_COEFFICIENT_G.md       G-coefficient table — all 72 months
 
 
 
