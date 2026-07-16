@@ -98,7 +98,7 @@
 ## Official Resources
 
 - Telegram: https://t.me/+qCYfDVPw1n4zZDQ8
-- Twitter/X: https://x.com/ESV_X_Ch
+- Twitter/X:https://x.com/_X_Architect_X_
 
 ---
 *Mathematics, not Promises.*
