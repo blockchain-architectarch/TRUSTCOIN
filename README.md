@@ -174,9 +174,8 @@ Link
 Telegram
 t.me/+qCYfDVPw1n4zZDQ8
 Signal
-Blockchain-Architect · Pioneers
-Twitter / X
-x.com/esv_blockchain
+Blockchain-Architect ·Trustcoin · Holders & Pioneers — Iron Handshake
+https://x.com/_X_Architect_X_
 
 
 
