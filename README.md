@@ -1,9 +1,8 @@
 > ## ⛔ PROJECT CLOSED — TRUSTCOIN V6.2 Mainnet
 >
 > On 20 Sep 2026 `renounceOwnership()` was called on TrustcoinV6.2. The V6.2 contracts are retired: they can no longer be changed, and a permanent per-wallet limit (4,000,000 TRUST) prevents the liquidity pool from receiving sales. **Do not buy or use V6.2 tokens.**
->
-> **The project continues as TRUSTCOIN V7 Mainnet** — a new set of contracts in a new repository (link will be added here).
->
+> **The project continues as [TRUSTCOIN V7 Mainnet](https://github.com/blockchain-architectarch/TRUSTCOIN-V7-Mainnet)** — a new set of contracts in a new repository.
+
 > Everything below is kept as history and does NOT describe the live system.
 ---
 TRUSTCOIN ($TRUST)
